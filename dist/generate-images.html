@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generate Free & Chill Images</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #000;
+            color: #fff;
+            padding: 20px;
+        }
+        canvas {
+            border: 1px solid #333;
+            margin: 10px 0;
+        }
+        button {
+            background: #dc2626;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            margin: 5px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        button:hover {
+            background: #ef4444;
+        }
+        .image-section {
+            margin: 30px 0;
+            padding: 20px;
+            border: 1px solid #333;
+            border-radius: 8px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Free & Chill - Image Generator</h1>
+    <p>This page generates the images needed for your website's social media previews and favicons.</p>
+
+    <div class="image-section">
+        <h2>Open Graph Image (1200x630) - For iPhone Messages & Social Media</h2>
+        <canvas id="ogCanvas" width="1200" height="630"></canvas>
+        <br>
+        <button onclick="downloadOGImage()">Download Open Graph Image</button>
+    </div>
+
+    <div class="image-section">
+        <h2>Favicon (32x32)</h2>
+        <canvas id="faviconCanvas" width="32" height="32"></canvas>
+        <br>
+        <button onclick="downloadFavicon()">Download Favicon</button>
+    </div>
+
+    <div class="image-section">
+        <h2>Apple Touch Icon (180x180)</h2>
+        <canvas id="appleCanvas" width="180" height="180"></canvas>
+        <br>
+        <button onclick="downloadAppleIcon()">Download Apple Touch Icon</button>
+    </div>
+
+    <script>
+        // Generate Open Graph Image
+        function generateOGImage() {
+            const canvas = document.getElementById('ogCanvas');
+            const ctx = canvas.getContext('2d');
+
+            // Background gradient
+            const gradient = ctx.createLinearGradient(0, 0, 1200, 630);
+            gradient.addColorStop(0, '#000000');
+            gradient.addColorStop(0.5, '#1a1a1a');
+            gradient.addColorStop(1, '#000000');
+            
+            ctx.fillStyle = gradient;
+            ctx.fillRect(0, 0, 1200, 630);
+
+            // Subtle pattern
+            ctx.fillStyle = 'rgba(255, 255, 255, 0.03)';
+            for (let x = 0; x < 1200; x += 40) {
+                for (let y = 0; y < 630; y += 40) {
+                    ctx.beginPath();
+                    ctx.arc(x + 20, y + 20, 1, 0, 2 * Math.PI);
+                    ctx.fill();
+                }
+            }
+
+            // Main Logo
+            ctx.font = 'bold 120px Arial, sans-serif';
+            ctx.textAlign = 'center';
+            ctx.textBaseline = 'middle';
+
+            // "Free" in red
+            ctx.fillStyle = '#dc2626';
+            ctx.fillText('Free', 450, 280);
+
+            // "&" in white
+            ctx.fillStyle = '#ffffff';
+            ctx.fillText('&', 600, 280);
+
+            // "Chill" in red
+            ctx.fillStyle = '#dc2626';
+            ctx.fillText('Chill', 750, 280);
+
+            // Tagline
+            ctx.font = '32px Arial, sans-serif';
+            ctx.fillStyle = 'rgba(255, 255, 255, 0.8)';
+            ctx.fillText('Your Ultimate Streaming Experience', 600, 350);
+
+            // Feature boxes
+            const features = [
+                { x: 400, emoji: '🎬', label: 'Movies' },
+                { x: 560, emoji: '📺', label: 'TV Shows' },
+                { x: 720, emoji: '🆓', label: 'Free' }
+            ];
+
+            features.forEach(feature => {
+                // Box background
+                ctx.fillStyle = 'rgba(220, 38, 38, 0.8)';
+                ctx.fillRect(feature.x, 420, 80, 60);
+
+                // Icon
+                ctx.font = '24px Arial, sans-serif';
+                ctx.fillStyle = '#ffffff';
+                ctx.fillText(feature.emoji, feature.x + 40, 445);
+
+                // Label
+                ctx.font = '16px Arial, sans-serif';
+                ctx.fillText(feature.label, feature.x + 40, 470);
+            });
+
+            // Bottom accent line
+            const lineGradient = ctx.createLinearGradient(300, 0, 900, 0);
+            lineGradient.addColorStop(0, '#dc2626');
+            lineGradient.addColorStop(1, '#ef4444');
+            
+            ctx.fillStyle = lineGradient;
+            ctx.fillRect(300, 580, 600, 4);
+        }
+
+        // Generate Favicon
+        function generateFavicon() {
+            const canvas = document.getElementById('faviconCanvas');
+            const ctx = canvas.getContext('2d');
+
+            // Background
+            ctx.fillStyle = '#000000';
+            ctx.fillRect(0, 0, 32, 32);
+
+            // Logo
+            ctx.font = 'bold 10px Arial, sans-serif';
+            ctx.textAlign = 'center';
+            ctx.textBaseline = 'middle';
+            ctx.fillStyle = '#dc2626';
+            ctx.fillText('F&C', 16, 16);
+
+            // Accent
+            ctx.fillStyle = '#dc2626';
+            ctx.fillRect(6, 26, 20, 2);
+        }
+
+        // Generate Apple Touch Icon
+        function generateAppleIcon() {
+            const canvas = document.getElementById('appleCanvas');
+            const ctx = canvas.getContext('2d');
+
+            // Background with rounded corners effect
+            ctx.fillStyle = '#000000';
+            ctx.fillRect(0, 0, 180, 180);
+
+            // Logo
+            ctx.font = 'bold 36px Arial, sans-serif';
+            ctx.textAlign = 'center';
+            ctx.textBaseline = 'middle';
+
+            // "Free" in red
+            ctx.fillStyle = '#dc2626';
+            ctx.fillText('Free', 90, 70);
+
+            // "&" in white
+            ctx.fillStyle = '#ffffff';
+            ctx.fillText('&', 90, 90);
+
+            // "Chill" in red
+            ctx.fillStyle = '#dc2626';
+            ctx.fillText('Chill', 90, 110);
+
+            // Accent line
+            ctx.fillStyle = '#dc2626';
+            ctx.fillRect(40, 140, 100, 4);
+        }
+
+        // Download functions
+        function downloadOGImage() {
+            const canvas = document.getElementById('ogCanvas');
+            const link = document.createElement('a');
+            link.download = 'og-image.png';
+            link.href = canvas.toDataURL();
+            link.click();
+        }
+
+        function downloadFavicon() {
+            const canvas = document.getElementById('faviconCanvas');
+            const link = document.createElement('a');
+            link.download = 'favicon-32x32.png';
+            link.href = canvas.toDataURL();
+            link.click();
+        }
+
+        function downloadAppleIcon() {
+            const canvas = document.getElementById('appleCanvas');
+            const link = document.createElement('a');
+            link.download = 'apple-touch-icon.png';
+            link.href = canvas.toDataURL();
+            link.click();
+        }
+
+        // Generate all images on page load
+        window.onload = function() {
+            generateOGImage();
+            generateFavicon();
+            generateAppleIcon();
+        };
+    </script>
+</body>
+</html>
