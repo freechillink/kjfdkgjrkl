@@ -22,9 +22,9 @@
   <rect width="1200" height="630" fill="url(#dots)"/>
   
   <!-- Main Logo -->
-  <text x="600" y="280" font-family="Arial, sans-serif" font-size="120" font-weight="900" text-anchor="middle" fill="#dc2626">Free</text>
-  <text x="600" y="280" font-family="Arial, sans-serif" font-size="120" font-weight="900" text-anchor="middle" fill="#ffffff" dx="240">&amp;</text>
-  <text x="600" y="280" font-family="Arial, sans-serif" font-size="120" font-weight="900" text-anchor="middle" fill="#dc2626" dx="320">Chill</text>
+  <text x="600" y="280" font-family="Arial, sans-serif" font-size="120" font-weight="900" text-anchor="middle" fill="#dc2626">Vibes</text>
+  <text x="600" y="280" font-family="Arial, sans-serif" font-size="120" font-weight="900" text-anchor="middle" fill="#ffffff" dx="280"> &amp; </text>
+  <text x="600" y="280" font-family="Arial, sans-serif" font-size="120" font-weight="900" text-anchor="middle" fill="#dc2626" dx="400">Chill</text>
   
   <!-- Tagline -->
   <text x="600" y="350" font-family="Arial, sans-serif" font-size="32" font-weight="400" text-anchor="middle" fill="#ffffff" opacity="0.8">Your Ultimate Streaming Experience</text>

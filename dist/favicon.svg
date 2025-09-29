@@ -3,7 +3,7 @@
   <rect width="32" height="32" fill="#000000" rx="6"/>
   
   <!-- Logo -->
-  <text x="16" y="20" font-family="Arial, sans-serif" font-size="10" font-weight="900" text-anchor="middle" fill="#dc2626">F&amp;C</text>
+  <text x="16" y="20" font-family="Arial, sans-serif" font-size="10" font-weight="900" text-anchor="middle" fill="#dc2626">V&amp;C</text>
   
   <!-- Accent -->
   <rect x="6" y="26" width="20" height="2" fill="#dc2626" rx="1"/>
