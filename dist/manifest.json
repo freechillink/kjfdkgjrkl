@@ -1,6 +1,6 @@
 {
-  "name": "Free & Chill - Stream Movies & TV Shows Free",
-  "short_name": "Free & Chill",
+  "name": "Vibes & Chill - Stream Movies & TV Shows Free",
+  "short_name": "Vibes & Chill",
   "description": "🍿 Watch thousands of movies and TV shows completely FREE! No subscription needed. Your ultimate streaming experience.",
   "start_url": "/",
   "display": "standalone",
@@ -16,7 +16,7 @@
       "sizes": "1200x630",
       "type": "image/png",
       "form_factor": "wide",
-      "label": "Free & Chill streaming interface"
+      "label": "Vibes & Chill streaming interface"
     }
   ],
   "icons": [
