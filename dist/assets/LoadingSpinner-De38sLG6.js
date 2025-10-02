@@ -1,0 +1,1 @@
+import{D as e}from"./config-CeCXydgj.js";import{j as o}from"./index-CZSZZV6j.js";const t=s=>!s||s==="N/A"?e:s,a=({size:s="md",className:r=""})=>{const n={sm:"w-4 h-4",md:"w-6 h-6",lg:"w-8 h-8"};return o.jsx("div",{className:`loading-spinner ${n[s]} ${r}`})};export{a as L,t as g};
